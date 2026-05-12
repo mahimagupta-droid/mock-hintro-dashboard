@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg:                #f5f5f5;
+  --color-surface:           #ffffff;
+  --color-surface-main:      #ffffff;
+  --color-surface-card:      #f9f9f9;
+  --color-surface-hover:     #f0f0f0;
+
+  --color-primary:           #5b5bd6;
+  --color-primary-soft:      #eeeeff;
+  --color-primary-dark:      #3d3d8f;
+
+  --color-icon-red-bg:       #fde8e8;
+  --color-icon-blue-bg:      #e0f0fd;
+  --color-icon-green-bg:     #e0f5ec;
+  --color-icon-purp-bg:      #eeebff;
+  --color-icon-red-fg:       #d94040;
+  --color-icon-blue-fg:      #2e86d4;
+  --color-icon-green-fg:     #1a9e62;
+  --color-icon-purp-fg:      #6b4fd8;
+
+  --color-text:              #1a1a1a;
+  --color-text-sub:          #555555;
+  --color-text-muted:        #888888;
+  --color-text-faint:        #aaaaaa;
+
+  --color-border:            #ebebeb;
+  --color-border-soft:       #e8e8e8;
+
+  --color-avatar-bg:         #7c5cdb;
+  --color-avatar-text:       #ffffff;
+
+  --color-btn-primary-bg:    #000000;
+  --color-btn-primary-text:  #ffffff;
+  --color-btn-outline-bg:    #ffffff;
+  --color-btn-outline-border:#d0d0d0;
+  --color-btn-outline-text:  #1a1a1a;
+  --color-btn-upgrade-bg:    #3d3d8f;
+  --color-btn-upgrade-text:  #ffffff;
+  --color-btn-ghost-bg:      #ffffff;
+  --color-btn-ghost-border:  #d0d0d0;
+  --color-btn-ghost-text:    #1a1a1a;
+
+  --radius-sm:               6px;
+  --radius-md:               8px;
+  --radius-lg:               12px;
+  --radius-xl:               16px;
+
+  --shadow-card:             0 1px 4px rgba(0,0,0,0.06);
+
+  --font-sans:               var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-bg text-text font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply bg-btn-primary-bg text-btn-primary-text rounded-md px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-80;
+  }
+  .btn-outline {
+    @apply bg-btn-outline-bg text-btn-outline-text border border-btn-outline-border rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-surface-hover;
+  }
+  .btn-upgrade {
+    @apply bg-btn-upgrade-bg text-btn-upgrade-text rounded-md px-6 py-2 text-sm font-semibold w-full transition-opacity hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply bg-btn-ghost-bg text-btn-ghost-text border border-btn-ghost-border rounded-md px-4 py-2 text-sm transition-colors hover:bg-surface-hover;
+  }
+  .stat-card {
+    @apply bg-surface-card border border-border rounded-lg p-4 flex items-center gap-3;
+  }
+  .nav-item {
+    @apply flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-text-sub transition-colors hover:bg-surface-hover cursor-pointer;
+  }
+  .nav-item-active {
+    @apply bg-primary-soft text-primary;
+  }
+  .call-row {
+    @apply flex items-center gap-3 px-2 py-3 rounded-md transition-colors hover:bg-surface-hover cursor-pointer;
+  }
+  .avatar {
+    @apply bg-avatar-bg text-avatar-text w-8 h-8 rounded-md flex items-center justify-center text-sm font-semibold flex-shrink-0;
+  }
 }
