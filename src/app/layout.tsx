@@ -26,7 +26,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col items-center justify-center">{children}</body>
+      <body className="min-h-screen flex items-center justify-center bg-white">
+        {children}
+      </body>
     </html>
   );
 }
