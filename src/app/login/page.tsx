@@ -6,7 +6,6 @@ export default function LoginPage() {
             <h1 className="text-[20px] sm:text-[28px] font-semibold text-center leading-none mb-[40px] text-text">
                 Login
             </h1>
-
             <form className="flex flex-col gap-[24px]">
                 <div className="flex flex-col gap-[12px]">
                     <label
@@ -29,7 +28,6 @@ export default function LoginPage() {
                         />
                     </div>
                 </div>
-
                 <div className="flex flex-col gap-[12px]">
                     <label
                         htmlFor="password"
