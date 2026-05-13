@@ -1,130 +1,57 @@
 @import "tailwindcss";
 
 @theme {
-
-    /* ─── BACKGROUNDS ───────────────────────────────────────────
-     3 depth levels create visual hierarchy across the layout:
-       bg            → outermost page canvas
-       surface       → sidebar, topbar, modal
-       surface-card  → stat cards, call rows, input fields
-       surface-hover → what any row/nav item becomes on :hover  */
-  --color-bg:             #f0f0f5;
-  --color-surface:        #ffffff;
-  --color-surface-card:   #ffffff;
-  --color-surface-hover:  #f5f5f5;
-
-
-  /* ─── BRAND / ACCENT ────────────────────────────────────────
-     Purple is the ONLY accent color in this design.
-       primary      → active nav icon, active text, focus rings
-       primary-soft → the tinted pill behind the active nav item  */
-  --color-primary:        #5b5bd6;
-  --color-primary-soft:   #eeeeff;
-
-
-  /* ─── STAT CARD ICON CIRCLES ────────────────────────────────
-     Each of the 4 stat cards has a unique pastel circle icon.
-     -bg  → the circle background
-     -fg  → the icon color drawn inside the circle
-     Order: red (Sessions), blue (Avg Duration), green (AI Used),
-            purple (Last Session)                                 */
-  --color-icon-red-bg:    #fde8e8;
-  --color-icon-blue-bg:   #e0f0fd;
-  --color-icon-green-bg:  #e0f5ec;
-  --color-icon-purp-bg:   #eeebff;
-
-  --color-icon-red-fg:    #d94040;
-  --color-icon-blue-fg:   #2e86d4;
-  --color-icon-green-fg:  #1a9e62;
-  --color-icon-purp-fg:   #6b4fd8;
-
-
-  /* ─── TYPOGRAPHY ────────────────────────────────────────────
-     4 levels of text — always pick the right one, never hardcode.
-       text       → headings, stat numbers, nav items, row titles
-       text-sub   → secondary labels, client names in call rows
-       text-muted → card labels ("Total Sessions"), subtitles
-       text-faint → placeholders, empty state descriptions        */
-  --color-text:           #1a1a1a;
-  --color-text-sub:       #444444;
-  --color-text-muted:     #888888;
-  --color-text-faint:     #aaaaaa;
-
-
-  /* ─── BORDERS ───────────────────────────────────────────────
-     border      → card outlines, input outlines, dividers
-     border-soft → subtler inner separators (e.g. between rows)   */
-  --color-border:         #e8e8e8;
-  --color-border-soft:    #f0f0f0;
-
-
-  /* ─── AVATAR ────────────────────────────────────────────────
-     The user avatar circle in the top-right topbar.
-     Also reused for call row avatars.                            */
-  --color-avatar-bg:      #7c5cdb;
-  --color-avatar-text:    #ffffff;
-
-
-  /* ─── BUTTONS ───────────────────────────────────────────────
-     4 button variants are used across the design:
-
-     primary    → Login button on the login page (black)
-     start      → "Start New Call" in dashboard header (near-black)
-     upgrade    → "Upgrade" at the bottom of the sidebar (dark purple)
-     ghost      → "Start a Call" in empty state (outlined, no fill)
-     watch      → "Watch Tutorial" in topbar (outlined, no fill)      */
-  --color-btn-primary-bg:     #000000;
-  --color-btn-primary-text:   #ffffff;
-
-  --color-btn-start-bg:       #1a1a1a;
-  --color-btn-start-text:     #ffffff;
-
-  --color-btn-upgrade-bg:     #3d3d8f;
-  --color-btn-upgrade-text:   #ffffff;
-
-  --color-btn-ghost-bg:       transparent;
-  --color-btn-ghost-border:   #d0d0d0;
-  --color-btn-ghost-text:     #1a1a1a;
-
-  --color-btn-watch-bg:       transparent;
-  --color-btn-watch-border:   #d0d0d0;
-  --color-btn-watch-text:     #1a1a1a;
-
-
-  /* ─── SHAPE ─────────────────────────────────────────────────
-     Consistent border-radius tokens — always use these.
-       sm → tags, small badges
-       md → inputs, nav items, call rows, avatar squares
-       lg → stat cards, modals, feedback panel
-       xl → sidebar mobile drawer                                 */
-  --radius-sm:  6px;
-  --radius-md:  8px;
-  --radius-lg:  12px;
-  --radius-xl:  16px;
-
-
-  /* ─── ELEVATION ─────────────────────────────────────────────
-     Only one shadow level in this design — used on stat cards
-     and the modal overlay.                                       */
-  --shadow-card:   0 1px 4px rgba(0, 0, 0, 0.06);
-  --shadow-modal:  0 8px 32px rgba(0, 0, 0, 0.12);
-
-
-  /* ─── MOTION ────────────────────────────────────────────────
-     Single transition token — apply to ALL interactive elements.
-     Never write a raw duration value anywhere else.              */
-  --transition: 0.15s ease;
-
+  --color-bg: #f5f5f7;
+  --color-surface: #ffffff;
+  --color-surface-card: #ffffff;
+  --color-surface-hover: #f7f7f8;
+  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-primary: #6c63ff;
+  --color-primary-soft: #efefff;
+  --color-text: #1c1c1c;
+  --color-text-sub: #4b4b4b;
+  --color-text-muted: #777777;
+  --color-text-faint: #a3a3a3;
+  --color-text-white: #ffffff;
+  --color-border: #e5e5e7;
+  --color-border-soft: #f0f0f2;
+  --color-btn-primary-bg: #000000;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-secondary-bg: #f3f3f4;
+  --color-btn-secondary-text: #1c1c1c;
+  --color-btn-outline-border: #E2E2E8;
+  --color-btn-outline-hover: #f4f4f5;
+  --color-btn-upgrade-bg: #5d5d63;
+  --color-btn-upgrade-text: #ffffff;
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-border: #e6e6e8;
+  --color-nav-active-bg: #ececff;
+  --color-nav-active-text: #6c63ff;
+  --color-icon-red-bg: #fde7e5;
+  --color-icon-red-fg: #e1685b;
+  --color-icon-blue-bg: #dff4f6;
+  --color-icon-blue-fg: #4f9ca6;
+  --color-icon-green-bg: #e4f7e8;
+  --color-icon-green-fg: #4ca861;
+  --color-icon-purple-bg: #efe7ff;
+  --color-icon-purple-fg: #8a63d2;
+  --color-avatar-bg: #7c5cff;
+  --color-avatar-text: #ffffff;
+  --color-star-active: #f5c518;
+  --color-star-inactive: #d7d7d9;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-modal: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --transition-fast: 150ms ease;
 }
 
-
-/* ============================================================
-   BASE STYLES
-   Applied to every element globally.
-   ============================================================ */
-
 @layer base {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -135,172 +62,173 @@
   }
 
   body {
-    /* Login page body — centers the login card */
-    @apply bg-bg text-text font-sans;
     min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Remove default list styles */
-  ul, ol {
-    list-style: none;
+  button,
+  input,
+  textarea {
+    font: inherit;
   }
 
-  /* Make images behave */
-  img, svg {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img,
+  svg {
     display: block;
     max-width: 100%;
   }
 
-  /* Consistent focus ring — use primary color */
+  ul,
+  ol {
+    list-style: none;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
   }
 }
 
-
-/* ============================================================
-   REUSABLE COMPONENT CLASSES
-   These map directly to UI patterns in the Figma.
-   Use these class names in your JSX — don't re-invent them.
-   ============================================================ */
-
 @layer components {
-
-  /* ── BUTTONS ──────────────────────────────────────────────── */
-
-  /* Login page submit button */
   .btn-primary {
-    @apply bg-btn-primary-bg text-btn-primary-text rounded-lg
-           px-4 py-2 text-sm font-semibold
-           transition-opacity hover:opacity-80
-           flex items-center justify-center;
+    @apply h-12 px-5 rounded-lg
+    flex items-center justify-center
+    font-medium text-sm;
+    background: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
+    transition: opacity var(--transition-fast);
   }
 
-  /* "Start New Call" in dashboard header */
-  .btn-start {
-    @apply bg-btn-start-bg text-btn-start-text rounded-lg
-           px-4 py-2 text-sm font-semibold
-           transition-opacity hover:opacity-80
-           flex items-center justify-center gap-2;
+  .btn-primary:hover {
+    opacity: 0.88;
   }
 
-  /* Sidebar bottom "Upgrade" button */
+  .btn-outline {
+    @apply h-10 px-4 rounded-lg
+    flex items-center justify-center
+    text-sm font-medium gap-2;
+
+    border: 1px solid var(--color-btn-outline-border);
+    background: white;
+    transition: background var(--transition-fast);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-btn-outline-hover);
+  }
+
   .btn-upgrade {
-    @apply bg-btn-upgrade-bg text-btn-upgrade-text rounded-lg
-           px-6 py-2 text-sm font-semibold w-full
-           transition-opacity hover:opacity-90
-           flex items-center justify-center;
+    @apply h-10 rounded-lg
+    flex items-center justify-center
+    text-sm font-medium w-full;
+    background: var(--color-btn-upgrade-bg);
+    color: var(--color-btn-upgrade-text);
   }
 
-  /* "Start a Call" in empty state / "Watch Tutorial" in topbar */
-  .btn-ghost {
-    @apply bg-btn-ghost-bg text-btn-ghost-text
-           border border-btn-ghost-border rounded-lg
-           px-4 py-2 text-sm font-medium
-           transition-colors hover:bg-surface-hover
-           flex items-center justify-center gap-2;
+  .input {
+    @apply w-full h-12 rounded-lg
+    px-4 text-sm outline-none;
+
+    background: var(--color-surface-card);
+    border: 1px solid var(--color-border);
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast);
   }
 
-
-  /* ── NAVIGATION ───────────────────────────────────────────── */
-
-  /* Every sidebar nav link in its default (inactive) state */
-  .nav-item {
-    @apply flex items-center gap-3 px-3 py-2 rounded-md
-           text-sm font-medium text-text-sub
-           transition-colors hover:bg-surface-hover
-           cursor-pointer w-full;
+  .input::placeholder {
+    color: var(--color-text-faint);
   }
 
-  /* Applied on top of nav-item when the route is active */
-  .nav-item-active {
-    @apply bg-primary-soft text-primary;
+  .input:focus {
+    border-color: var(--color-primary);
   }
 
-
-  /* ── STAT CARDS ───────────────────────────────────────────── */
-
-  /* The container for each of the 4 stat cards */
-  .stat-card {
-    @apply bg-surface-card border border-border rounded-lg p-4
-           flex items-center gap-4;
-    box-shadow: var(--shadow-card);
-  }
-
-  /* The colored icon circle on the left of each stat card */
-  .stat-icon {
-    @apply w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0;
-  }
-
-
-  /* ── CALL HISTORY ROWS ────────────────────────────────────── */
-
-  /* Each individual call row in the "Recent calls" list */
-  .call-row {
-    @apply flex items-center gap-3 px-3 py-3 rounded-md
-           transition-colors hover:bg-surface-hover
-           cursor-pointer;
-  }
-
-  /* The colored square avatar on the left of each call row */
-  .avatar {
-    @apply bg-avatar-bg text-avatar-text
-           w-8 h-8 rounded-md
-           flex items-center justify-center
-           text-xs font-semibold flex-shrink-0;
-  }
-
-  /* Date group header inside call history (e.g. "April 29th") */
-  .date-header {
-    @apply text-xs font-medium text-text-muted px-3 py-2;
-  }
-
-
-  /* ── CARDS & PANELS ───────────────────────────────────────── */
-
-  /* Generic white card wrapper (used for call list, modals) */
   .card {
-    @apply bg-surface-card border border-border rounded-lg;
+    @apply rounded-xl border;
+    background: var(--color-surface-card);
+    border-color: var(--color-border);
     box-shadow: var(--shadow-card);
   }
 
-
-  /* ── EMPTY STATE ──────────────────────────────────────────── */
-
-  /* Centered empty state block (shown for u1 in Recent Calls) */
-  .empty-state {
-    @apply flex flex-col items-center justify-center gap-3
-           py-16 text-center;
+  .sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background: var(--color-sidebar-bg);
+    border-right: 1px solid var(--color-sidebar-border);
   }
 
+  .nav-item {
+    @apply flex items-center gap-3
+    px-4 py-2 rounded-lg
+    text-sm font-medium;
 
-  /* ── MODAL OVERLAY ────────────────────────────────────────── */
+    color: var(--color-text-sub);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+  }
 
-  /* Semi-transparent backdrop behind feedback modal */
+  .nav-item:hover {
+    background: var(--color-surface-hover);
+  }
+
+  .nav-item-active {
+    background: var(--color-nav-active-bg);
+    color: var(--color-nav-active-text);
+  }
+
+  .stat-card {
+    @apply rounded-xl border p-4
+    flex items-center gap-4;
+
+    background: var(--color-surface-card);
+    border-color: var(--color-border);
+  }
+
+  .stat-icon {
+    @apply w-11 h-11 rounded-xl
+    flex items-center justify-center;
+  }
+
+  .call-row {
+    @apply flex items-center justify-between
+    px-4 py-3 rounded-lg;
+
+    transition: background var(--transition-fast);
+  }
+
+  .call-row:hover {
+    background: var(--color-surface-hover);
+  }
+
   .modal-overlay {
-    @apply fixed inset-0 flex items-center justify-center z-50;
-    background: rgba(0, 0, 0, 0.4);
+    @apply fixed inset-0
+    flex items-center justify-center
+    z-50;
+
+    background: var(--color-overlay);
   }
 
-  /* The white modal panel itself */
   .modal-panel {
-    @apply bg-surface rounded-xl p-6 w-full max-w-md mx-4;
+    @apply w-full max-w-[560px]
+    rounded-2xl p-6;
+
+    background: white;
     box-shadow: var(--shadow-modal);
   }
 
-
-  /* ── INPUTS ───────────────────────────────────────────────── */
-
-  /* Shared input style (login form + feedback textarea) */
-  .input {
-    @apply w-full bg-surface-card border border-border rounded-lg
-           px-4 py-3 text-sm text-text
-           outline-none transition-colors
-           placeholder:text-text-faint
-           focus:border-primary;
+  .empty-state {
+    @apply flex flex-col items-center justify-center
+    text-center py-16 px-4;
   }
-
 }

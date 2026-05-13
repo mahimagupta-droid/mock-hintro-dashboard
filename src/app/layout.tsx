@@ -26,7 +26,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex items-center justify-center bg-color-bg">
+      <body className="min-h-screen bg-color-bg">
         <UserProvider>
           {children}
         </UserProvider>
